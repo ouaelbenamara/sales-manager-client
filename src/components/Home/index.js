@@ -81,6 +81,7 @@ function Home() {
       } else {
         console.log(logInUserResult.status)
         setDialogMessage('Unknown error occurred')
+        console.log('')
         dispatch(logOut())
 
 

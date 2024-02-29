@@ -55,7 +55,7 @@ export const apiSlice = createApi({
 
         }),
 
-        getProtection: builder.query({
+        getProtection: builder.mutation({
             query: () => ({
                 url: 'user/protected',
                 method: 'GET',
@@ -140,7 +140,7 @@ export const apiSlice = createApi({
 export const { useRegisterUserMutation,
     useUpdateUserMutation,
     useLogInUserMutation,
-    useGetProtectionQuery,
+    useGetProtectionMutation,
     useSignOutUserMutation,
     useGetUserQuery,
     useAddProductMutation,

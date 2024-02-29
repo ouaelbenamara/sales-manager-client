@@ -13,7 +13,6 @@ function Main() {
 
     const [sales, setSales] = useState(null)
     const [mergedItems, setMergedItems] = useState(null)
-    const [newArr, setNewArr] = useState(null)
     const [items, setItems] = useState(null)
     const [fond, setFond] = useState(0)
     const [gains, setGains] = useState(0)
@@ -32,6 +31,12 @@ function Main() {
     const [getSales, getSalesResult] = useGetSalesMutation()
     const salesFromStore = useSelector(selectSales)
     const itemsFromStore = useSelector(selectProducts)
+
+    useEffect(() => {
+        getProducts()
+        getSales()
+
+    }, [])
 useEffect(()=>{
     setSales(salesFromStore)
     setItems(itemsFromStore)
@@ -67,11 +72,7 @@ useEffect(()=>{
         console.log(mergedItems)
     }, [mergedItems])
 
-    useEffect(() => {
-        getProducts()
-        getSales()
 
-    }, [])
 
 
     useEffect(() => {
