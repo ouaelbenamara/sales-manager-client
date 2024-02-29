@@ -10,11 +10,14 @@ export const useAuth = () => {
     // const {userId} = useParams()
     const userId = sessionStorage.getItem('userId')
     const [isAuthenticated, setIsAuthenticated] = useState(null); // Use null as an initial value
-    const { getProtection, useGetProtectionResult } = useGetProtectionMutation();
+    const [getProtection, useGetProtectionResult ] = useGetProtectionMutation();
     const [signOut, signOutResult] = useSignOutUserMutation();
     useEffect(() => {
         getProtection()
     }, [])
+    useEffect(() => {
+        console.log('isAuthenticated:',isAuthenticated)
+    }, [isAuthenticated])
     useEffect(() => {
         const checkAuthentication = async () => {
             try {
@@ -26,6 +29,7 @@ export const useAuth = () => {
                     // resetStore(dispach)
 
                     signOut()
+                    console.log('dipatch false here')
 
                     setIsAuthenticated(false);
 
@@ -33,7 +37,7 @@ export const useAuth = () => {
                 }
             } catch (error) {
                 console.log(error)
-
+console.log('False here')
                 setIsAuthenticated(false);
             }
         };
