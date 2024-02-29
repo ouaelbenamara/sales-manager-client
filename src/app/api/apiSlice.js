@@ -5,7 +5,7 @@ import { selectToken } from '../../features/users/userSlice';
 export const apiSlice = createApi({
     reducerPath: 'api',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://localhost:5000/',
+        baseUrl: 'https://sales-manager-wnv5.onrender.com/',
         prepareHeaders: (headers, { getState }) => {
           
             const token = selectToken(getState())// Get the token from the Redux store
