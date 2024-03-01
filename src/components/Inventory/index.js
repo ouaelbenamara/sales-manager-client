@@ -237,7 +237,7 @@ function Inventory() {
                             }}>
                                 <EditIcon />
                             </IconButton>
-                            {<CardMedia component="img" alt={item.productName} height="140" image={item.productPicture} />}
+                            {<CardMedia component="img" alt={item.productName} height="140" image={`data:image/jpeg;base64,${item.productPicture}`} />}
 
                             <CardContent>
                                 <Typography color={'black'}  variant="h6">{item.productName}</Typography>
