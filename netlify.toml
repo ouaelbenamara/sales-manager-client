@@ -1,4 +1,4 @@
-[[reidrects]]
-from ="/*"
-to = "/index.jsx"
+[[redirects]]
+from = "/*"
+to = "/index.html"
 status = 200
