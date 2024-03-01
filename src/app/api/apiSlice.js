@@ -9,7 +9,7 @@ export const apiSlice = createApi({
         prepareHeaders: (headers, { getState }) => {
           
             const token = selectToken(getState())// Get the token from the Redux store
-            console.log(token)
+
             if (token) {
                 headers.set('token', `${token}`);
             }
