@@ -3,4 +3,5 @@
 ###  `run npm init`
 ### `npm start`
 
-
+## link to the hosted client side 
+https://mansales.netlify.app/
